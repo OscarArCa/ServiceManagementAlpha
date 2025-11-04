@@ -1,0 +1,7 @@
+{
+  "name": "ServiceManagementAlpha",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
