@@ -1,0 +1,49 @@
+ion-content {
+    --padding-top: 0;
+    --padding-bottom: 0;
+    display: flex; 
+    flex-direction: column;
+}
+
+:host {
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+}
+
+ion-list {
+    --padding: 0;
+    --margin: 0;
+}
+
+ion-item {
+    --padding: 0;
+    --min-width: 50px;
+    --max-width: 300px;
+    --min-height: 80px;
+    --max-height: 100px;
+}
+
+ion-icon {
+    margin-right: 10px;
+}
+
+/* 1. Hace que ion-content sea el punto de referencia para elementos absolutos */
+ion-content {
+    --padding-bottom: 50px; /* IMPORTANTE: Añade espacio al fondo para evitar que la lista superior lo cubra */
+    position: relative; 
+}
+
+/* 2. Fija la lista inferior */
+.bottom-list {
+    position: absolute;
+    bottom: 0;           /* Pegado al fondo del ion-content */
+    left: 0;             /* Pegado al borde izquierdo */
+    right: 0;            /* Pegado al borde derecho */
+    width: 100%;         /* Asegura que ocupe todo el ancho */
+    margin: 0;           /* Elimina cualquier margen externo */
+}
+
+.bottom-item {
+    --min-height: 50px;
+}

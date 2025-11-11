@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+    <div>
+      <label>Email</label>
+      <input type="email" formControlName="email" />
+    </div>
+
+    <div>
+      <label>Password</label>
+      <input type="password" formControlName="password" /> <!-- ✅ Cambiado -->
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid">
+      Iniciar sesión
+    </button>
+
+  </form>
+</ion-content>
+

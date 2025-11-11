@@ -2,7 +2,18 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: '',
-    loadChildren: () => import('./tabs/tabs.routes').then((m) => m.routes),
+    path: 'login',
+    loadComponent: () => import('./pages/login/login.page').then(m => m.LoginPage),
+    data: { showSidebar: false }
   },
+  {
+    path: 'homeAdmin',
+    loadComponent: () => import('./pages/home-admin/home-admin.page').then(m => m.HomeAdminPage),
+    data: { showSidebar: true }
+  },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  }
 ];
